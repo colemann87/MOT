@@ -1,0 +1,90 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-l">Download your MOT test certifcate</h1>
+
+        <div class="govuk-inset-text">
+          <p>Heavy vehicle test certificates are not available for tests carried out prior to 2018</p>
+        </div>
+
+        <p>If you think the MOT expiry date or any of the vehicle details are wrong, <a class="govuk-link--no-visited-state" href="">contact DVSA</a>.</p>
+      </div>
+    </div>
+
+
+        <h2 class="govuk-heading-m">Most recent test certificate</h2>
+
+        <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">2 November 2022</th>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Pass</strong></td>
+            <td class="govuk-table__cell govuk-table__cell-right"><a href="">View certificate (PDF)</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+        <h2 class="govuk-heading-m">Previous test certificates</h2>
+
+        <table class="govuk-table">
+  <thead class="govuk-table__head">
+
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">2 November 2022</th>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Fail</strong></td>
+      <td class="govuk-table__cell govuk-table__cell-right"><a href="">View certificate (PDF)</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">2 November 2021</th>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Pass</strong></td>
+      <td class="govuk-table__cell govuk-table__cell-right"><a href="download-cert-error">View certificate (PDF)</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">2 November 2020</th>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Pass</strong></td>
+      <td class="govuk-table__cell govuk-table__cell-right"><a href="">View certificate (PDF)</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">2 November 2020</th>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Fail</strong></td>
+      <td class="govuk-table__cell govuk-table__cell-right"><a href="">View certificate (PDF)</a></td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  </div>
+
+<p class="govuk-body"><a href="">Return to MOT test history</a></p>
+
+
+
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+
+
+
+
+
+{% endblock %}
