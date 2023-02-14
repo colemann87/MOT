@@ -1,22 +1,63 @@
-{% extends "layouts/main.html" %}
+
+{% extends "layout.html" %}
 
 {% block pageTitle %}
-Home – {{serviceName}} – GOV.UK Prototype Kit
+  GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
 
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-xl">DVSA</span>
+        <h1 class="govuk-heading-xl">MOT prototypes <strong class="govuk-tag govuk-tag--turquoise">2023</strong></h1>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
-  </div>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-m">Work in progress</h3>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li><p><a href="Replace-certificate-HGV/index" class="govuk-link">HGV Certs into MOTH</a></p></li>
+        </ul>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-m">In development</h3>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li><p><a href="ANPR/anpr-index" class="govuk-link">Camera's in garages (ANPR) discovery</a></p></li>
+        </ul>
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-m">Live</h3>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li><p><a href="dva/dva-index" class="govuk-link">DVA Data onto MOTH</a></p></li>
+          <li><p><a href="MOTR/motr-index" class="govuk-link">MOT reminders</a></p></li>
+          <li><p><a href="MOTH/start" class="govuk-link">MOT History</a></p></li>
+          <li><p><a href="MOT/annual-assessment" class="govuk-link">Be able to easily identify Pass or Fail result of MOT testers annual assessment</a></p></li>
+          <li><p><a href="MTS/offsite-review" class="govuk-link">Offsite review</a></p></li>
+          <li><p><a href="Replace-certificate/index" class="govuk-link">Replace a lost or damaged MOT certificate</a></p></li>
+          <li><p><a href="MOT/duplicate-drivers-licence-checks" class="govuk-link">Duplicate drivers licence checks</a></p></li>
+        </ul>
+
+
+
+      </div>
+    </div>
+
+  </main>
 </div>
+
+
+
+
 
 {% endblock %}

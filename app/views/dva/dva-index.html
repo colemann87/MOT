@@ -1,0 +1,81 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+    <a href="#" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-xl">DVSA MOT</span>
+        <h1 class="govuk-heading-xl">DVA Data onto MOTH</h1>
+
+        <div class="index-view-proto">
+          <h2 class="govuk-heading-m">Latest prototype for testing <strong class="govuk-tag govuk-tag--blue">
+  V.1
+</strong></h2>
+
+
+          <a href="simple/start.html" class="govuk-button">Simple History</a>
+          <a href="mixed/start.html" class="govuk-button govuk-button--secondary">Mixed History</a>
+          <a href="firstmot/start.html" class="govuk-button govuk-button--secondary">First MOT</a>
+
+          <p>DVA Data will be available in MOT History for NI citizens. </p>
+          <p>Above are core scenarios of Simple History (vehicles with NI only history), Mixed History (vehicles with a combination of GB and NI test history) & First MOT. </p>
+          <p>Design variances for Heavy Vehicles and mileage in KM is linked in Version 1 tab below. </p>
+
+        </div>
+
+        <h2 class="govuk-heading-m">History</h2>
+
+        <p>Previous user journeys for testing, highlighting the main differences.</p>
+
+        <p>Service design board can be <a href="https://lucid.app/lucidspark/37fd37eb-cae7-475f-b540-b0603f24d880/edit?viewport_loc=-13740%2C108746%2C5316%2C2637%2C0_0&invitationId=inv_02a7b729-1015-4cae-affd-775b588e016a" class="govuk-link">found here.</a></p>
+
+        <p>Design tracking can be <a href="https://lucid.app/lucidspark/417554f2-d7be-4de6-880a-a6a640f80f1d/edit?viewport_loc=-2968%2C6732%2C7088%2C3516%2C0_0&invitationId=inv_ceee12c4-d8e1-4417-8eab-fda47b03c000" class="govuk-link">found here.</a></p>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Version 1
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+
+            <h3 class="govuk-heading-s">Version 1.0</h3>
+
+            <p class="govuk-body"><a href="firstmot/start.html" class="govuk-link">Light Vehicle - First MOT</a>   |   <a href="hgvfirstmot/start.html" class="govuk-link">Heavy Vehicle - First MOT</a></p>
+            <p class="govuk-body"><a href="simple/start.html" class="govuk-link">Light Vehicle - Simple History</a>   |   <a href="simplekm/start.html" class="govuk-link">Light Vehicle - Simple History (KM)</a></p>
+            <p class="govuk-body"><a href="mixed/start.html" class="govuk-link">Light Vehicle - Mixed History</a>   |   <a href="mixedkm/start.html" class="govuk-link">Light Vehicle - Mixed History (KM)</a></p>
+            <p class="govuk-body"><a href="hgvsimple/start.html" class="govuk-link">Heavy Vehicle - Simple History</a>   |   <a href="hgvmixedkm/start.html" class="govuk-link">Heavy Vehicle - Mixed History (KM)</a></p>
+
+            <p class="govuk-body">Differences:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Curent version for MVP scenarios</li>
+            </ul>
+          </div>
+        </details>
+
+
+
+
+
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+
+
+
+
+{% endblock %}
