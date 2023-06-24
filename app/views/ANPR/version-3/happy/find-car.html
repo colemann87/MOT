@@ -42,16 +42,15 @@ GOV.UK Prototype Kit
 
       </div>
 
-
-<!--      <input type="file" accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">-->
+<!--      <input type="file" accept="image/*" name="image" id="picture-taken"  onchange="loadFile(event)" style="display: none;">-->
 
 
       <label id="open-camera-button" class="govuk-button">Open Camera</label>
-      <label id="take-photo-button" class="govuk-button">Take photo</label>
+      <label id="take-photo-button"  class="govuk-button">Take photo</label>
       <label id="close-camera-button" class="govuk-button">Stop Camera</label>
 
       <video id="video" width="320" height="240" autoplay></video>
-      <canvas id="canvas" width="320" height="240"></canvas>
+      <canvas id="canvas" width="320" height="240" style="display:none"></canvas>
 
 
 
@@ -75,14 +74,12 @@ GOV.UK Prototype Kit
           let image_data_url = canvas.toDataURL('image/jpeg');
 
           // data url of the image
-          console.log(image_data_url);
+          loadFile(image_data_url);
         });
 
         stop_button.addEventListener('click', async function () {
           window.localStream.getTracks().forEach(track => track.stop())
         })
-
-        
 
 
       </script>
@@ -90,9 +87,11 @@ GOV.UK Prototype Kit
       <!-- <p><img id="output" width="200" /></p> -->
 
       <script>
-        var loadFile = function(event) {
+        var loadFile = function(image_data_url) {
+          // let image_data_url = canvas.toDataURL('image/jpeg');
+
           var image = document.getElementById('output');
-          image.src = URL.createObjectURL(event.target.files[0]);
+          image.src = image_data_url;
 
           var x = document.getElementById("myDIV");
           if (x.style.display === "block") {
