@@ -58,12 +58,15 @@ GOV.UK Prototype Kit
       <script>
 
         let camera_button = document.querySelector("#open-camera-button");
-        let video = document.querySelector("#video");
         let click_button = document.querySelector("#take-photo-button");
+        let stop_button = document.querySelector("#close-camera-button");
+
+        let video = document.querySelector("#video");
         let canvas = document.querySelector("#canvas");
 
         camera_button.addEventListener('click', async function() {
           let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+          window.localStream = stream;
           video.srcObject = stream;
         });
 
@@ -74,6 +77,12 @@ GOV.UK Prototype Kit
           // data url of the image
           console.log(image_data_url);
         });
+
+        stop_button.addEventListener('click', async function () {
+          window.localStream.getTracks().forEach(track => track.stop())
+        })
+
+        
 
 
       </script>
