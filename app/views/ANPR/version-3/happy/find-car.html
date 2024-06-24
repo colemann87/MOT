@@ -41,18 +41,55 @@ GOV.UK Prototype Kit
 
 
       </div>
+      
+
+      <label id="open-camera-button" class="govuk-button">Open Camera</label>
+      <label id="take-photo-button"  class="govuk-button">Take photo</label>
+      <label id="close-camera-button" class="govuk-button">Stop Camera</label>
+
+      <video id="video" width="320" height="240" autoplay></video>
+      <canvas id="canvas" width="320" height="240" style="display:none;"></canvas>
 
 
-      <input type="file" accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
 
-      <label id="open-camera-button" for="file" class="govuk-button" onchange="gotopage(this)">Take photo</label>
+      <script>
+
+        let camera_button = document.querySelector("#open-camera-button");
+        let click_button = document.querySelector("#take-photo-button");
+        let stop_button = document.querySelector("#close-camera-button");
+
+        let video = document.querySelector("#video");
+        let canvas = document.querySelector("#canvas");
+
+        camera_button.addEventListener('click', async function() {
+          let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+          window.localStream = stream;
+          video.srcObject = stream;
+        });
+
+        click_button.addEventListener('click', function() {
+          canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+          let image_data_url = canvas.toDataURL('image/jpeg');
+
+          // data url of the image
+          loadFile(image_data_url);
+        });
+
+        stop_button.addEventListener('click', async function () {
+          window.localStream.getTracks().forEach(track => track.stop())
+        })
+
+
+      </script>
 
       <!-- <p><img id="output" width="200" /></p> -->
 
       <script>
-        var loadFile = function(event) {
+        var loadFile = function(image_data_url) {
+          // let image_data_url = canvas.toDataURL('image/jpeg');
+
           var image = document.getElementById('output');
-          image.src = URL.createObjectURL(event.target.files[0]);
+          image.src = image_data_url;
 
           var x = document.getElementById("myDIV");
           if (x.style.display === "block") {
